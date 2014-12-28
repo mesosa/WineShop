@@ -14,6 +14,6 @@ cd WineShop
 
 git add .
 
-git commit -m "Write some meaningful message what did you do"
+git commit -m "Write some meaningful message about what you did"
 
 git push
