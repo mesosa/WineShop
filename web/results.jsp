@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 23-12-2014, 14:41:16
+    Document   : results
+    Created on : 29-12-2014, 23:13:21
     Author     : miklasnjor
 --%>
 
@@ -15,8 +15,9 @@
             
             <%@ include file="/WEB-INF/jspf/searchbox.jspf" %>
             
-            <div id="searchResults"></div> <!-- ends searchResults -->
+            <%@ include file="/WEB-INF/jspf/results_searchResults.jspf" %>
+            
             
         </div> <!-- ends main -->
     </body>
-</html>
+</html>     

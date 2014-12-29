@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 23-12-2014, 14:41:16
+    Document   : shoppingCart
+    Created on : 29-12-2014, 23:20:08
     Author     : miklasnjor
 --%>
 
@@ -14,8 +14,6 @@
         <div id="main">
             
             <%@ include file="/WEB-INF/jspf/searchbox.jspf" %>
-            
-            <div id="searchResults"></div> <!-- ends searchResults -->
             
         </div> <!-- ends main -->
     </body>
