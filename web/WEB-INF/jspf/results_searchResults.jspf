@@ -39,7 +39,7 @@
 
                 <li class="item_wineSugar">Sweet</li>
 
-                <li class="item_GetPrices"><a href="priceResults.jsp">Get Prices</a></li>
+                <li class="item_GetPrices"><a href="priceResults">Get Prices</a></li>
 
             </ul> <!-- end resultsItemText -->
 
@@ -65,7 +65,7 @@
 
                 <li class="item_wineSugar">Dry</li>
 
-                <li class="item_GetPrices"><a href="priceResults.jsp">Get Prices</a></li>
+                <li class="item_GetPrices"><a href="priceResults">Get Prices</a></li>
 
             </ul> <!-- end resultsItemText -->
 

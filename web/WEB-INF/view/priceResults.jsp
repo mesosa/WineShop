@@ -14,7 +14,7 @@
         <div id="main">
             
             <%@ include file="/WEB-INF/jspf/searchbox.jspf" %>
-            
+            Price results
             <!-- div id="searchResults"></div--> <!-- ends searchResults -->
             
         </div> <!-- ends main -->

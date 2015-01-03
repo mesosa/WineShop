@@ -10,11 +10,12 @@
             
     <body>
         <%@ include file="/WEB-INF/jspf/navigation.jspf" %>
+        
             
         <div id="main">
             
             <%@ include file="/WEB-INF/jspf/searchbox.jspf" %>
-            
+            Shopping cart
         </div> <!-- ends main -->
     </body>
 </html>

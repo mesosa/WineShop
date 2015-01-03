@@ -23,6 +23,7 @@ import javax.servlet.http.HttpSession;
             loadOnStartup = 1,
             urlPatterns = {"/results",
                             "/shoppingCart",
+                            "/priceResults"
                            })
 public class ControllerServlet extends HttpServlet {
 
@@ -44,6 +45,8 @@ public class ControllerServlet extends HttpServlet {
         if (userPath.equals("/results")) {
 
         } else if (userPath.equals("/shoppingCart")){
+        
+        } else if (userPath.equals("/priceResults")){
         
         }
 

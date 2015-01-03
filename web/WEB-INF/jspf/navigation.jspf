@@ -4,8 +4,8 @@
 <div id="navigation">
 
     <div id="logo">
-        <h1 id="logoText"><a href="/WEB-INF/index.jsp">Wino Shop</a></h1>
-        <h2 id="sloganText"><a href="/WEB-INF/index.jsp">Where usability gets wasted!</a></h2>
+        <h1 id="logoText"><a href="/web-inf">Wino Shop</a></h1>
+        <h2 id="sloganText"><a href="/web-inf">Where usability gets wasted!</a></h2>
     </div> <!-- end logo -->
 
 
@@ -25,7 +25,7 @@
 
     <div id="shoppingCart" class="button">
 
-        <a href="shoppingCart.jsp">View Shopping Cart</a>
+        <a href="shoppingCart">View Shopping Cart</a>
 
     </div> <!-- end shoppingCart -->
 
