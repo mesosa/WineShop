@@ -2,7 +2,7 @@
 <%@ page pageEncoding="UTF-8" %>
 
 <div id="searchBox">
-    <form name="WineSearch" id="wineSearchForm" action="results.jsp"> <!-- goes to results.jsp -->
+    <form name="WineSearch" id="wineSearchForm" action="results" method="get"> <!-- goes to results.jsp -->
         <hgroup>
                 <h1>Wine Search</h1>
         </hgroup>
