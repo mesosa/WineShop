@@ -6,6 +6,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Collection;
 import javax.ejb.EJB;
 import javax.servlet.ServletConfig;
@@ -40,9 +41,34 @@ public class ControllerServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String userPath = request.getServletPath();
-        
+                
         // if category page is requested
         if (userPath.equals("/results")) {
+            // get all the parameters to variables
+            // searchButton=Search+for+wines%21
+
+            String wineCountry = request.getParameter("wineCountry");
+            System.out.println(wineCountry);
+          
+            String wineRegion = request.getParameter("wineRegion");
+            System.out.println(wineRegion);
+            
+            String wineWinery = request.getParameter("wineWinery");
+            System.out.println(wineWinery);
+
+            String wineColor = request.getParameter("wineColor");
+            System.out.println(wineColor);
+            
+            String wineFlavor = request.getParameter("wineFlavor");
+            System.out.println(wineFlavor);
+            
+            String wineSugar = request.getParameter("wineSugar");
+            System.out.println(wineSugar);
+            
+            String wineBody = request.getParameter("wineBody");
+            System.out.println(wineBody);
+            
+            // call web service with these variables values. ask with prolog queries
 
         } else if (userPath.equals("/shoppingCart")){
         
