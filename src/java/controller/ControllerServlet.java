@@ -84,10 +84,10 @@ public class ControllerServlet extends HttpServlet {
             SetOfWines results = searchWines("winename",wineWinery,wineColor,wineSugar,wineBody,wineFlavor,wineRegion,wineCountry);
             // call web service with these variables values. ask with prolog queries
             
-            for (Wine w:results.getWines()){
+            /*for (Wine w:results.getWines()){
                 System.out.println(w.getWineName());
             }
-            
+*/            
         } else if (userPath.equals("/shoppingCart")){
         
         } else if (userPath.equals("/priceResults")){
