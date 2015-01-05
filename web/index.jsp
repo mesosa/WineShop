@@ -13,6 +13,7 @@
             
         <div id="main">
             
+            <!-- the search box -->
             <%@ include file="/WEB-INF/jspf/searchbox.jspf" %>
             
             <div id="searchResults"></div> <!-- ends searchResults -->
