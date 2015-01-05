@@ -16,6 +16,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.ws.WebServiceRef;
+import org.me.wine.SetOfWines;
+import org.me.wine.Wine;
+import org.me.wine.WineWS_Service;
 /**
  *
  * @author tgiunipero
@@ -27,7 +31,9 @@ import javax.servlet.http.HttpSession;
                             "/priceResults"
                            })
 public class ControllerServlet extends HttpServlet {
-
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/WineWS/WineWS.wsdl")
+    private WineWS_Service service;
+   
     
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -48,28 +54,40 @@ public class ControllerServlet extends HttpServlet {
             // searchButton=Search+for+wines%21
 
             String wineCountry = request.getParameter("wineCountry");
-            System.out.println(wineCountry);
-          
+            if (wineCountry.equals("Choose"))
+                wineCountry = "country";
+            
             String wineRegion = request.getParameter("wineRegion");
-            System.out.println(wineRegion);
+            if (wineRegion.equals("Choose"))
+                wineRegion = "region";
             
             String wineWinery = request.getParameter("wineWinery");
-            System.out.println(wineWinery);
-
+            if (wineWinery.equals("Choose"))
+                wineWinery = "winery";
+            
             String wineColor = request.getParameter("wineColor");
-            System.out.println(wineColor);
+            if (wineColor == null)
+                wineColor = "color";
             
             String wineFlavor = request.getParameter("wineFlavor");
-            System.out.println(wineFlavor);
+            if (wineFlavor == null)
+                wineFlavor = "flavor";
             
             String wineSugar = request.getParameter("wineSugar");
-            System.out.println(wineSugar);
-            
+            if (wineSugar == null)
+                wineSugar = "sugar";
+           
             String wineBody = request.getParameter("wineBody");
-            System.out.println(wineBody);
+            if (wineBody == null)
+                wineBody = "body";
             
+            SetOfWines results = searchWines("winename",wineWinery,wineColor,wineSugar,wineBody,wineFlavor,wineRegion,wineCountry);
             // call web service with these variables values. ask with prolog queries
-
+            
+            for (Wine w:results.getWines()){
+                System.out.println(w.getWineName());
+            }
+            
         } else if (userPath.equals("/shoppingCart")){
         
         } else if (userPath.equals("/priceResults")){
@@ -111,4 +129,14 @@ public class ControllerServlet extends HttpServlet {
         }
     }
 
+    private SetOfWines searchWines(java.lang.String wineName, java.lang.String winery, java.lang.String color, java.lang.String sugar, java.lang.String body, java.lang.String flavor, java.lang.String region, java.lang.String country) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        org.me.wine.WineWS port = service.getWineWSPort();
+        return port.searchWines(wineName, winery, color, sugar, body, flavor, region, country);
+    }
+
+    
+
+    
 }
