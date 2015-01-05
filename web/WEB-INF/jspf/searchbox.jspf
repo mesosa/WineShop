@@ -99,13 +99,13 @@
         <fieldset>
             <legend>Wine Body</legend>
 
-            <input type="radio" name="wineColor" value="light"	id="wineBody_Light"/>
+            <input type="radio" name="wineBody" value="light"	id="wineBody_Light"/>
             <label for="wineBody_Light">Light</label>
 
-            <input type="radio" name="wineColor" value="full" id="wineBody_Full"/>
+            <input type="radio" name="wineBody" value="full" id="wineBody_Full"/>
             <label for="wineBody_Full">Full</label>
 
-            <input type="radio" name="wineColor" value="medium"	id="wineBody_Medium"/>
+            <input type="radio" name="wineBody" value="medium"	id="wineBody_Medium"/>
             <label for="wineBody_Medium">Medium</label>
 
         </fieldset> <!-- end Wine Body radiobuttons -->
