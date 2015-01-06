@@ -16,10 +16,10 @@
             <input type="radio" name="wineColor" value="Red"	id="wineColor_red"/>
             <label for="wineColor_red">Red</label>
 
-            <input type="radio" name="wineColor" value="rose" id="wineColor_rose"/>
+            <input type="radio" name="wineColor" value="Rose" id="wineColor_rose"/>
             <label for="wineColor_rose">Rose</label>
 
-            <input type="radio" name="wineColor" value="white"	id="wineColor_white"/>
+            <input type="radio" name="wineColor" value="White"	id="wineColor_white"/>
             <label for="wineColor_white">White</label>
         </fieldset> <!-- end Color Radio buttons -->
 
@@ -99,13 +99,13 @@
         <fieldset>
             <legend>Wine Body</legend>
 
-            <input type="radio" name="wineBody" value="light"	id="wineBody_Light"/>
+            <input type="radio" name="wineBody" value="Light"	id="wineBody_Light"/>
             <label for="wineBody_Light">Light</label>
 
-            <input type="radio" name="wineBody" value="full" id="wineBody_Full"/>
+            <input type="radio" name="wineBody" value="Full" id="wineBody_Full"/>
             <label for="wineBody_Full">Full</label>
 
-            <input type="radio" name="wineBody" value="medium"	id="wineBody_Medium"/>
+            <input type="radio" name="wineBody" value="Medium"	id="wineBody_Medium"/>
             <label for="wineBody_Medium">Medium</label>
 
         </fieldset> <!-- end Wine Body radiobuttons -->
@@ -114,13 +114,13 @@
         <fieldset>
             <legend>Wine Flavor</legend>
 
-            <input type="radio" name="wineFlavor" value="moderate"	id="wineFlavor_Moderate"/>
+            <input type="radio" name="wineFlavor" value="Moderate"	id="wineFlavor_Moderate"/>
             <label for="wineFlavor_Moderate">Moderate</label>
 
-            <input type="radio" name="wineFlavor" value="strong" id="wineFlavor_Strong"/>
+            <input type="radio" name="wineFlavor" value="Strong" id="wineFlavor_Strong"/>
             <label for="wineFlavor_Strong">Strong</label>
 
-            <input type="radio" name="wineFlavor" value="delicate"	id="wineFlavor_Delicate"/>
+            <input type="radio" name="wineFlavor" value="Delicate"	id="wineFlavor_Delicate"/>
             <label for="wineFlavor_Delicate">Delicate</label>
 
         </fieldset>  <!-- end Wine Flavor radiobuttons -->
@@ -129,13 +129,13 @@
         <fieldset>
             <legend>Wine Sugar</legend>
 
-            <input type="radio" name="wineSugar" value="dry"	id="wineSugar_Dry"/>
+            <input type="radio" name="wineSugar" value="Dry"	id="wineSugar_Dry"/>
             <label for="wineSugar_Dry">Dry</label>
 
-            <input type="radio" name="wineSugar" value="offdry" id="wineSugar_Offdry"/>
+            <input type="radio" name="wineSugar" value="Offdry" id="wineSugar_Offdry"/>
             <label for="wineSugar_Offdry">Off Dry</label>
 
-            <input type="radio" name="wineSugar" value="sweet"	id="wineSugar_Sweet"/>
+            <input type="radio" name="wineSugar" value="Sweet"	id="wineSugar_Sweet"/>
             <label for="wineSugar_Sweet">Sweet</label>
 
         </fieldset>  <!-- end Wine Sugar radiobuttons -->

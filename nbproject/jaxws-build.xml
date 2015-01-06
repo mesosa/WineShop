@@ -42,5 +42,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/org/me/wine"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WineWS"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WineWS"/>
+    <target name="wsimport-client-WineWS_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WineWS_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WineWS_1" destdir="${build.generated.dir}/jax-wsCache/WineWS_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WineWS_1/wsdl/localhost_8080/WineWS/WineWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WineWS/WineWS?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WineWS_1/wsdl/localhost_8080/WineWS/WineWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WineWS_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WineWS_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WineWS_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/org/me/wine"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WineWS_1"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WineWS, wsimport-client-WineWS_1"/>
 </project>

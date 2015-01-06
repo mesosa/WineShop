@@ -8,6 +8,8 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -17,6 +19,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.xml.ws.WebServiceRef;
+import org.me.wine.Exception_Exception;
+import org.me.wine.PrologException_Exception;
 import org.me.wine.SetOfWines;
 import org.me.wine.Wine;
 import org.me.wine.WineWS_Service;
@@ -55,39 +59,60 @@ public class ControllerServlet extends HttpServlet {
 
             String wineCountry = request.getParameter("wineCountry");
             if (wineCountry.equals("Choose"))
-                wineCountry = "country";
+                wineCountry = "Country";
+            else
+                wineCountry = wineCountry.toLowerCase();
             
             String wineRegion = request.getParameter("wineRegion");
             if (wineRegion.equals("Choose"))
-                wineRegion = "region";
+                wineRegion = "Region";
+            else
+                wineRegion = wineRegion.toLowerCase();
             
             String wineWinery = request.getParameter("wineWinery");
             if (wineWinery.equals("Choose"))
-                wineWinery = "winery";
+                wineWinery = "Winery";
+            else
+                wineWinery = wineWinery.toLowerCase();
             
             String wineColor = request.getParameter("wineColor");
             if (wineColor == null)
-                wineColor = "color";
-            
+                wineColor = "Color";
+            else
+                wineColor = wineColor.toLowerCase();
+                
             String wineFlavor = request.getParameter("wineFlavor");
             if (wineFlavor == null)
-                wineFlavor = "flavor";
+                wineFlavor = "Flavor";
+            else
+                wineFlavor = wineFlavor.toLowerCase();
             
             String wineSugar = request.getParameter("wineSugar");
             if (wineSugar == null)
-                wineSugar = "sugar";
+                wineSugar = "Sugar";
+            else
+                wineSugar = wineSugar.toLowerCase();
            
             String wineBody = request.getParameter("wineBody");
             if (wineBody == null)
-                wineBody = "body";
+                wineBody = "Body";
+            else 
+                wineBody = wineBody.toLowerCase();
             
-            SetOfWines results = searchWines("winename",wineWinery,wineColor,wineSugar,wineBody,wineFlavor,wineRegion,wineCountry);
-            // call web service with these variables values. ask with prolog queries
-            
-            /*for (Wine w:results.getWines()){
-                System.out.println(w.getWineName());
+            SetOfWines results = null;
+            try {
+                results = searchWines("winename",wineWinery,wineColor,wineSugar,wineBody,wineFlavor,wineRegion,wineCountry);
+                // call web service with these variables values. ask with prolog queries
+            } catch (Exception_Exception ex) {
+                Logger.getLogger(ControllerServlet.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (PrologException_Exception ex) {
+                Logger.getLogger(ControllerServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-*/            
+            
+            
+            
+            request.setAttribute("setofwines", results);
+                        
         } else if (userPath.equals("/shoppingCart")){
         
         } else if (userPath.equals("/priceResults")){
@@ -129,7 +154,7 @@ public class ControllerServlet extends HttpServlet {
         }
     }
 
-    private SetOfWines searchWines(java.lang.String wineName, java.lang.String winery, java.lang.String color, java.lang.String sugar, java.lang.String body, java.lang.String flavor, java.lang.String region, java.lang.String country) {
+    private SetOfWines searchWines(java.lang.String wineName, java.lang.String winery, java.lang.String color, java.lang.String sugar, java.lang.String body, java.lang.String flavor, java.lang.String region, java.lang.String country) throws Exception_Exception, PrologException_Exception {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         org.me.wine.WineWS port = service.getWineWSPort();
