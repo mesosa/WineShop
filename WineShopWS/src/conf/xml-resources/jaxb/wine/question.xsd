@@ -1,0 +1,70 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="question" type="Request"/>   
+    <xs:element name="answer" type="SetOfWines"/>  
+    
+    <xs:complexType name="Request">
+        <xs:sequence>
+            <xs:element name="wineRequest" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Wine" type="Wine" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SetOfWines">
+        <xs:sequence>
+            <xs:element name="Wines" type="Wine" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Wine">
+        <xs:sequence>
+            <xs:element name="wineName" type="xs:string"/>
+            <xs:element name="winery" type="xs:string"/>
+            <xs:element name="wineRegion" type="xs:string"/>
+            <xs:element name="wineColor" type="wineColorType"/>	
+            <xs:element name="wineBody" type="wineBodyType"/>
+            <xs:element name="wineFlavor" type="wineFlavorType"/>
+            <xs:element name="wineSugar" type="wineSugarType" />
+            <xs:element name="wineCountry" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="wineColorType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Red"/>
+            <xs:enumeration value="Rose"/>	
+            <xs:enumeration value="White"/>
+            <xs:enumeration value="Undefined"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="wineBodyType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Full"/>
+            <xs:enumeration value="Medium"/>	
+            <xs:enumeration value="Light"/>
+            <xs:enumeration value="Undefined"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="wineFlavorType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Delicate"/>
+            <xs:enumeration value="Moderate"/>	
+            <xs:enumeration value="Strong"/>
+            <xs:enumeration value="Undefined"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="wineSugarType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Dry"/>
+            <xs:enumeration value="Offdry"/>	
+            <xs:enumeration value="Sweet"/>
+            <xs:enumeration value="Undefined"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+ 
+   
+</xs:schema>

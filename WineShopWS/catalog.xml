@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/Users/Mojca/NetBeansProjects/WineShopWS/../../Downloads/agentlab/answear.xsd" uri="src/conf/xml-resources/jaxb/wine/answear.xsd"/>
+    <system systemId="file:/Users/Mojca/NetBeansProjects/WineShopWS/../../Downloads/agentlab/question.xsd" uri="src/conf/xml-resources/jaxb/wine/question.xsd"/>
+    <system systemId="file:/Users/Mojca/NetBeansProjects/WineShopWS/../../Downloads/agentlab%203/question.xsd" uri="src/conf/xml-resources/jaxb/wine/question.xsd"/>
+</catalog>

@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://wine.me.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://wine.me.org/">
+
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="PrologException" type="tns:PrologException"/>
+
+<xs:element name="getOneVariableAnswer" type="tns:getOneVariableAnswer"/>
+
+<xs:element name="getOneVariableAnswerResponse" type="tns:getOneVariableAnswerResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="searchWines" type="tns:searchWines"/>
+
+<xs:element name="searchWinesResponse" type="tns:searchWinesResponse"/>
+
+<xs:complexType name="searchWines">
+<xs:sequence>
+<xs:element name="wineName" type="xs:string" minOccurs="0"/>
+<xs:element name="winery" type="xs:string" minOccurs="0"/>
+<xs:element name="color" type="xs:string" minOccurs="0"/>
+<xs:element name="sugar" type="xs:string" minOccurs="0"/>
+<xs:element name="body" type="xs:string" minOccurs="0"/>
+<xs:element name="flavor" type="xs:string" minOccurs="0"/>
+<xs:element name="region" type="xs:string" minOccurs="0"/>
+<xs:element name="country" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="searchWinesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:SetOfWines" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetOfWines">
+<xs:sequence>
+<xs:element name="Wines" type="tns:Wine" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Wine">
+<xs:sequence>
+<xs:element name="wineName" type="xs:string"/>
+<xs:element name="winery" type="xs:string"/>
+<xs:element name="wineRegion" type="xs:string"/>
+<xs:element name="wineColor" type="tns:wineColorType"/>
+<xs:element name="wineBody" type="tns:wineBodyType"/>
+<xs:element name="wineFlavor" type="tns:wineFlavorType"/>
+<xs:element name="wineSugar" type="tns:wineSugarType"/>
+<xs:element name="wineCountry" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PrologException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="term" type="tns:term" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="term" abstract="true">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getOneVariableAnswer">
+<xs:sequence>
+<xs:element name="arg0" type="tns:prologAssignments" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="prologAssignments">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getOneVariableAnswerResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:term" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="wineColorType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Red"/>
+<xs:enumeration value="Rose"/>
+<xs:enumeration value="White"/>
+<xs:enumeration value="Undefined"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="wineBodyType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Full"/>
+<xs:enumeration value="Medium"/>
+<xs:enumeration value="Light"/>
+<xs:enumeration value="Undefined"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="wineFlavorType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Delicate"/>
+<xs:enumeration value="Moderate"/>
+<xs:enumeration value="Strong"/>
+<xs:enumeration value="Undefined"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="wineSugarType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Dry"/>
+<xs:enumeration value="Offdry"/>
+<xs:enumeration value="Sweet"/>
+<xs:enumeration value="Undefined"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

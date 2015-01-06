@@ -1,0 +1,122 @@
+<%-- any content can be specified here e.g.: --%>
+<%@page import="org.me.wine.Wine"%>
+<%@page import="org.me.wine.SetOfWines"%>
+<%@ page pageEncoding="UTF-8" %>
+<div id="searchResults">
+
+    <ul id="resultsTitles">
+
+        <li class="title_wineName">Wine Name</li>
+        <li class="title_wineryName">Winery</li>
+        <li class="title_wineCountry">Country</li>
+        <li class="title_wineRegion">Region</li>
+        <li class="title_wineBody">Body</li>
+        <li class="title_wineColor">Color</li>
+        <li class="title_wineFlavour">Flavor</li>
+        <li class="title_wineSugar">Sugar</li>
+        <li class="title_GetPrices">Get Prices</li>
+
+
+    </ul> <!-- end resultsTitles -->
+    
+    
+    
+    
+    
+    <ul id="resultsList">
+    <% 
+        SetOfWines set = (SetOfWines)request.getAttribute("setofwines");
+    
+        int i=0;
+        if (set != null && !set.getWines().isEmpty()){
+        
+            for (Wine w:set.getWines()){
+                if ((i%2)==0){
+                %><li class="resultItems odd" id="resultItem_01"><%
+                } else {
+                %><li class="resultItems even" id="resultItem_01"><%
+                }
+                i=i+1;
+                %>
+                    <ul id="resultsList">
+                        <li class="item_wineName"><%= w.getWineName() %></li>
+                        <li class="item_wineryName"><%= w.getWinery() %></li>
+                        <li class="item_wineCountry"><%= w.getWineCountry() %></li>
+                        <li class="item_wineRegion"><%= w.getWineRegion() %><li>
+                        <li class="item_wineBody"><%= w.getWineBody().toString().toLowerCase() %></li>
+                        <li class="item_wineColor"><%= w.getWineColor().toString().toLowerCase() %></li>
+                        <li class="item_wineFlavour"><%= w.getWineFlavor().toString().toLowerCase() %></li>
+                        <li class="item_wineSugar"><%= w.getWineSugar().toString().toLowerCase() %></li>
+                        <li class="item_GetPrices"><a href="priceResults">Get Prices</a></li>
+                    </ul>
+                </li>
+                <%
+            }
+        } else {
+            %>No search results.<%
+        }
+    %>
+    </ul>
+    
+        
+        
+     <!-- end resultItem 01 -->
+        
+        
+        <!--
+        <li class="resultItems even" id="resultItem_01">
+
+            <ul class="resultItemText">
+
+                <li class="item_wineName">Chablis Blah</li>
+
+                <li class="item_wineryName">Chablisimo</li>
+
+                <li class="item_wineCountry">USA</li>
+
+                <li class="item_wineRegion">California</li>
+
+                <li class="item_wineBody">Strong</li>
+
+                <li class="item_wineColor">Red</li>
+
+                <li class="item_wineFlavour">Moderate</li>
+
+                <li class="item_wineSugar">Sweet</li>
+
+                <li class="item_GetPrices"><a href="priceResults">Get Prices</a></li>
+
+            </ul> <!-- end resultsItemText -->
+<!--
+        </li> <!-- end resultItem 01 -->
+<!--
+        <li class="resultItems odd" id="resultItem_02">
+
+            <ul class="resultItemText">
+
+                <li class="item_wineName">BurgerOnion Blah</li>
+
+                <li class="item_wineryName">Burgerino</li>
+
+                <li class="item_wineCountry">USA</li>
+
+                <li class="item_wineRegion">California</li>
+
+                <li class="item_wineBody">Light</li>
+
+                <li class="item_wineColor">White</li>
+
+                <li class="item_wineFlavour">Delicate</li>
+
+                <li class="item_wineSugar">Dry</li>
+
+                <li class="item_GetPrices"><a href="priceResults">Get Prices</a></li>
+<!--
+            </ul> <!-- end resultsItemText -->
+
+  <!--      </li> <!-- end resultItem 02 -->
+
+ <!--   </ul> <!-- end resultsList -->
+
+
+</div> <!-- end searchResults -->
