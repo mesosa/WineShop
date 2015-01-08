@@ -14,7 +14,11 @@ import generated.WineFlavorType;
 import generated.WineSugarType;
 import gnu.prolog.term.Term;
 import gnu.prolog.vm.PrologException;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Iterator;
+import java.util.Properties;
 import java.util.Set;
 import javax.ejb.Stateless;
 import javax.jws.WebMethod;
@@ -46,9 +50,11 @@ public class WineWS {
     @WebMethod(operationName = "searchWines")
     public SetOfWines searchWines(@WebParam(name = "wineName") String wineName, @WebParam(name = "winery") String winery, @WebParam(name = "color") String color, @WebParam(name = "sugar") String sugar, @WebParam(name = "body") String body, @WebParam(name = "flavor") String flavor, @WebParam(name = "region") String region, @WebParam(name = "country") String country) throws PrologException, Exception {
         
+        String url = this.getClass().getResource("").getPath().concat("wine.pro");
+        
         SetOfWines wines = new SetOfWines();
         ExecuteGoal execute = new ExecuteGoal();
-        execute.readInPredicates("/Users/Mojca/NetBeansProjects/WineShop/WineShopWS/wine.pro");
+        execute.readInPredicates(url);
         
         String goalToRun = "wine(Winename"+","+winery+","+color+","+sugar+","+body+","+flavor+","+region+","+country+")";
         System.out.println(goalToRun);
