@@ -1,7 +1,7 @@
-wine(mountadamChardonnay,mountadam,red,dry,full,strong,southaustraliaregion,australia).
-wine(mountadamRiesling,mountadam,white,dry,medium,delicate,southaustraliaregion,australia).
-wine(mountadamPinotNoir,mountadam,red,dry,medium,moderate,southaustraliaregion_2,australia).
-wine(chateauChevalBlancStEmilion,chateauchevalblanc,rose,offdry,light,delicate,chateauregion,france).
+wine(mountadamchardonnay,mountadam,red,dry,full,strong,southaustraliaregion,australia).
+wine(mountadamriesling,mountadam,white,dry,medium,delicate,southaustraliaregion,australia).
+wine(mountadampinotnoir,mountadam,red,dry,medium,moderate,southaustraliaregion_2,australia).
+wine(chateauchevalblancstemilion,chateauchevalblanc,rose,offdry,light,delicate,chateauregion,france).
 wine(chateaulafiterothschildpauillac,chateaulafiterothschild,red,sweet,medium,moderate,chateauregion,france).
 wine(chateaumargaux,chateaumargauxwinery,red,offdry,full,strong,chateauregion,france).
 wine(chateaumorgonbeaujolais,chateaumorgon,rose,sweet,light,delicate,chateauregion,france).
