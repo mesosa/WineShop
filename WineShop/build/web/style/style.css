@@ -10,6 +10,11 @@
         border-left: 2px solid #000;
 }
 
+body{
+
+    font-family: 'Slabo 27px', serif;
+}
+
 #logo {
 	width: 32%;
 	float: left;
