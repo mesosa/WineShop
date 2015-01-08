@@ -10,11 +10,25 @@
         border-left: 2px solid #000;
 }
 
-body{
 
-    font-family: 'Slabo 27px', serif;
+body{
+    background-image: url("http://i.imgur.com/0r0fh48.jpg");
+background-repeat: no-repeat;
+background-position: right bottom;
+background-attachment: fixed;
+background-size: cover;
+
+font-family: 'Slabo 27px', serif;
 }
 
+  table {border-collapse:collapse; 
+         table-layout:fixed;
+         width:50px;}
+  
+   table td {border:solid 1px;
+             width:50px;
+             text-align: center;
+             word-wrap:break-word;}
 #logo {
 	width: 32%;
 	float: left;
@@ -96,6 +110,7 @@ fieldset {
 
 #searchResults {
 	width: 64%;
+        
 	overflow: hidden;
 }
 
@@ -106,7 +121,7 @@ ul#resultsTitles, ul#resultsList, ul.resultItemText {
 	padding: 0;
 	width: 100%;
 	overflow: hidden;
-	font-size: .85em;
+	font-size: 1em;
 }
 
 ul#resultsTitles li, ul.resultItemText li  {

@@ -3,21 +3,23 @@
 <%@page import="org.me.wine.SetOfWines"%>
 <%@ page pageEncoding="UTF-8" %>
 <div id="searchResults">
+                <table style="width:100%">
 
-    <ul id="resultsTitles">
-
-        <li class="title_wineName">Wine Name</li>
-        <li class="title_wineryName">Winery</li>
-        <li class="title_wineCountry">Country</li>
-        <li class="title_wineRegion">Region</li>
-        <li class="title_wineBody">Body</li>
-        <li class="title_wineColor">Color</li>
-        <li class="title_wineFlavour">Flavor</li>
-        <li class="title_wineSugar">Sugar</li>
-        <li class="title_GetPrices">Get Prices</li>
-
-
-    </ul> <!-- end resultsTitles -->
+    <tr id="resultsTitles">
+            
+       
+                        <th class="title_wineName">Wine Name</th>
+                        <th class="title_wineryName">Winery</th>
+                        <th class="title_wineCountry">Country</th>
+                        <th class="title_wineRegion">Region</th>
+                        <th class="title_wineBody">Body</th>
+                        <th class="title_wineColor">Color</th>
+                        <th class="title_wineFlavour">Flavor</th>
+                        <th class="title_wineSugar">Sugar</th>
+                        <th class="title_GetPrices">Get Prices</th>
+                    </tr>
+                </table>
+   <!-- end resultsTitles -->
     
     
     
@@ -38,17 +40,24 @@
                 }
                 i=i+1;
                 %>
-                    <ul id="resultsList">
-                        <li class="item_wineName"><%= w.getWineName() %></li>
-                        <li class="item_wineryName"><%= w.getWinery() %></li>
-                        <li class="item_wineCountry"><%= w.getWineCountry() %></li>
-                        <li class="item_wineRegion"><%= w.getWineRegion() %><li>
-                        <li class="item_wineBody"><%= w.getWineBody().toString().toLowerCase() %></li>
-                        <li class="item_wineColor"><%= w.getWineColor().toString().toLowerCase() %></li>
-                        <li class="item_wineFlavour"><%= w.getWineFlavor().toString().toLowerCase() %></li>
-                        <li class="item_wineSugar"><%= w.getWineSugar().toString().toLowerCase() %></li>
-                        <li class="item_GetPrices"><a href="priceResults">Get Prices</a></li>
-                    </ul>
+                
+                
+                
+                <table style="width:100%">
+                   
+        
+                     <tr id="resultsList">
+                        <td class="item_wineName"><%= w.getWineName() %></td>
+                        <td class="item_wineryName"><%= w.getWinery() %></td>
+                        <td class="item_wineCountry"><%= w.getWineCountry() %></td>
+                        <td class="item_wineRegion"><%= w.getWineRegion() %></td>
+                        <td class="item_wineBody"><%= w.getWineBody().toString().toLowerCase() %></td>
+                        <td class="item_wineColor"><%= w.getWineColor().toString().toLowerCase() %></td>
+                        <td class="item_wineFlavour"><%= w.getWineFlavor().toString().toLowerCase() %></td>
+                        <td class="item_wineSugar"><%= w.getWineSugar().toString().toLowerCase() %></td>
+                        <td class="item_GetPrices"><a href="priceResults">Get Prices</a></td>
+                    </tr>
+                </table>
                 </li>
                 <%
             }

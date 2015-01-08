@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="wineBody" type="{http://wine.me.org/}wineBodyType"/>
  *         &lt;element name="wineFlavor" type="{http://wine.me.org/}wineFlavorType"/>
  *         &lt;element name="wineSugar" type="{http://wine.me.org/}wineSugarType"/>
+ *         &lt;element name="wineCountry" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,7 +41,8 @@ import javax.xml.bind.annotation.XmlType;
     "wineColor",
     "wineBody",
     "wineFlavor",
-    "wineSugar"
+    "wineSugar",
+    "wineCountry"
 })
 public class Wine {
 
@@ -58,6 +60,8 @@ public class Wine {
     protected WineFlavorType wineFlavor;
     @XmlElement(required = true)
     protected WineSugarType wineSugar;
+    @XmlElement(required = true)
+    protected String wineCountry;
 
     /**
      * Gets the value of the wineName property.
@@ -225,6 +229,30 @@ public class Wine {
      */
     public void setWineSugar(WineSugarType value) {
         this.wineSugar = value;
+    }
+
+    /**
+     * Gets the value of the wineCountry property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getWineCountry() {
+        return wineCountry;
+    }
+
+    /**
+     * Sets the value of the wineCountry property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setWineCountry(String value) {
+        this.wineCountry = value;
     }
 
 }
