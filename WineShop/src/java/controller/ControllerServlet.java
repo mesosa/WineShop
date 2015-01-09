@@ -116,7 +116,10 @@ public class ControllerServlet extends HttpServlet {
         } else if (userPath.equals("/shoppingCart")){
         
         } else if (userPath.equals("/priceResults")){
-        
+            String winename = request.getParameter("wineName");
+            System.out.println(winename);
+            
+            request.setAttribute("winename", winename);
         }
 
         // use RequestDispatcher to forward request internally

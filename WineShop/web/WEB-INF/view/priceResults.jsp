@@ -14,7 +14,7 @@
         <div id="main">
             
             <%@ include file="/WEB-INF/jspf/searchbox.jspf" %>
-            Price results
+            Price results for <% String winename = (String)request.getAttribute("winename"); %><%= winename %>
             <!-- div id="searchResults"></div--> <!-- ends searchResults -->
             
         </div> <!-- ends main -->

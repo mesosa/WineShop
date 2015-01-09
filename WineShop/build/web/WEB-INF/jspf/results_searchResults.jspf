@@ -45,9 +45,13 @@
                 
                 <table style="width:100%">
                    
-        
-                     <tr id="resultsList">
-                        <td class="item_wineName"><%= w.getWineName() %></td>
+                        
+                    <tr id="resultsList">
+                        <form name="PriceSearch" action="priceResults" method="get">
+                        <td class="item_wineName">
+                            <%= w.getWineName() %>
+                            <input type="hidden" name="wineName" value="<%= w.getWineName() %>" />
+                        </td>
                         <td class="item_wineryName"><%= w.getWinery() %></td>
                         <td class="item_wineCountry"><%= w.getWineCountry() %></td>
                         <td class="item_wineRegion"><%= w.getWineRegion() %></td>
@@ -55,7 +59,8 @@
                         <td class="item_wineColor"><%= w.getWineColor().toString().toLowerCase() %></td>
                         <td class="item_wineFlavour"><%= w.getWineFlavor().toString().toLowerCase() %></td>
                         <td class="item_wineSugar"><%= w.getWineSugar().toString().toLowerCase() %></td>
-                        <td class="item_GetPrices"><a href="priceResults">Get Prices</a></td>
+                        <td class="item_GetPrices"><input type="submit" name="searchPriceButton" value="Get prices!"/></td>
+                        </form>
                     </tr>
                 </table>
                 </li>
