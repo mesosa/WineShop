@@ -10,18 +10,7 @@
         <input type="hidden" id="theUserID" name="theUsersID" value="">
 
 
-        <fieldset>
-            <legend>Color</legend>
-
-            <input type="radio" name="wineColor" value="Red"	id="wineColor_red"/>
-            <label for="wineColor_red">Red</label>
-
-            <input type="radio" name="wineColor" value="Rose" id="wineColor_rose"/>
-            <label for="wineColor_rose">Rose</label>
-
-            <input type="radio" name="wineColor" value="White"	id="wineColor_white"/>
-            <label for="wineColor_white">White</label>
-        </fieldset> <!-- end Color Radio buttons -->
+  
 
         <fieldset>
             <legend>Country</legend>
@@ -95,7 +84,18 @@
             </select>
         </fieldset> <!-- end Winery select box -->
 
+      <fieldset>
+            <legend>Color</legend>
 
+            <input type="radio" name="wineColor" value="Red"	id="wineColor_red"/>
+            <label for="wineColor_red">Red</label>
+
+            <input type="radio" name="wineColor" value="Rose" id="wineColor_rose"/>
+            <label for="wineColor_rose">Rose</label>
+
+            <input type="radio" name="wineColor" value="White"	id="wineColor_white"/>
+            <label for="wineColor_white">White</label>
+        </fieldset> <!-- end Color Radio buttons -->
         <fieldset>
             <legend>Wine Body</legend>
 

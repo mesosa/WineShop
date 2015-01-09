@@ -1,7 +1,8 @@
 
 
 #navigation {
-	width: 960px;
+     
+	width: 1024px;
 	margin: 0 auto;
         padding: 10px;
 	overflow: hidden;
@@ -12,18 +13,17 @@
 
 
 body{
+
     background-image: url("http://i.imgur.com/0r0fh48.jpg");
 background-repeat: no-repeat;
 background-position: right bottom;
 background-attachment: fixed;
 background-size: cover;
-
-font-family: 'Slabo 27px', serif;
 }
 
   table {border-collapse:collapse; 
          table-layout:fixed;
-         width:50px;}
+         width:60px;}
   
    table td {border:solid 1px;
              width:50px;
@@ -33,6 +33,7 @@ font-family: 'Slabo 27px', serif;
 	width: 32%;
 	float: left;
 	overflow: hidden;
+        
 }
 
 h1#logoText {
@@ -46,9 +47,7 @@ h2#sloganText {
 	margin: 0;
 }
 
-h1#logoText a, h2#sloganText a {
-    text-decoration: none;
-}
+
 
 #userID {
 	width: 45%;
@@ -76,7 +75,7 @@ p#userIDtext {
 }
 
 #clearUserID {
-	width: 15%;
+	width: 30%;
 	float: left;
 	overflow: hidden;
 }
@@ -88,7 +87,7 @@ p#userIDtext {
 }
 
 #main {
-	width: 960px;
+	width: 1024px;
 	margin: 0 auto;
 	border-left: 2px solid #000;
         border-right: 2px solid #000;
@@ -114,6 +113,17 @@ fieldset {
 	overflow: hidden;
 }
 
+#searchAvailable {
+	width: 64%;
+        word-wrap:break-word;
+	overflow: hidden;
+}
+
+#cart{
+	width: 64%;
+        
+	overflow: hidden;
+}
 /* Results Titles */ 
 
 ul#resultsTitles, ul#resultsList, ul.resultItemText {
