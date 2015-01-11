@@ -32,6 +32,10 @@
         <servlet-name>ControllerServlet</servlet-name>
         <url-pattern>/priceResults</url-pattern>
     </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>ControllerServlet</servlet-name>
+        <url-pattern>/addtobasket</url-pattern>
+    </servlet-mapping>
     <resource-ref>
         <res-ref-name>jdbc/wineshop</res-ref-name>
         <res-type>javax.sql.DataSource</res-type>

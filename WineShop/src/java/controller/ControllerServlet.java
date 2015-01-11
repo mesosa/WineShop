@@ -19,6 +19,7 @@ import javax.ejb.EJB;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,7 +38,8 @@ import org.me.wine.WineWS_Service;
             loadOnStartup = 1,
             urlPatterns = {"/results",
                             "/shoppingCart",
-                            "/priceResults"
+                            "/priceResults",
+                            "/addtobasket"
                            })
 public class ControllerServlet extends HttpServlet {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/WineWS/WineWS.wsdl")
@@ -64,7 +66,7 @@ public class ControllerServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String userPath = request.getServletPath();
-                
+        System.out.println(userPath);        
         // if category page is requested
         if (userPath.equals("/results")) {
             // get all the parameters to variables
@@ -197,17 +199,28 @@ public class ControllerServlet extends HttpServlet {
                   se.printStackTrace();
                }//end finally try
             }//end try
-            
-            
-            
-            
-            
-            
+
             //
             
             request.setAttribute("winename", winename);
         }
 
+        else if (userPath.equals("/addtobasket")) {
+            
+            System.out.print("hejhej");
+            HttpSession session = request.getSession(true);
+            String s = request.getParameter("Winename");
+            String q = request.getParameter("Quantity");
+            
+            session.setAttribute("Winename",s);
+            session.setAttribute("Seller", request.getParameter("Seller").toString());
+            session.setAttribute("Quantity", q==""?"0":q);
+            session.setAttribute("Price", request.getParameter("Price").toString());
+           
+
+            response.setHeader("Location", "/shoppingCart");
+            
+        }
         // use RequestDispatcher to forward request internally
         String url = "/WEB-INF/view" + userPath + ".jsp";
 

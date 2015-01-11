@@ -46,6 +46,7 @@
                
                      <h1>Available sellers</h1>
                        </div>
+                         <form name="basketAdder" id="addToBasketForm" action="addtobasket">
                     <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -57,13 +58,14 @@
                         </tr>
                     </thead>
                     <tr>
-                        <td><%= winename %></td>
-                        <td><%= agentRegion %></td>
-                        <td><%= price %>$</td>
-                        <td><input type="number" name="quantity"  min="1" max="<%= quantity %>"></td>
-                        <td>Add to basket</td>
+                        <td><%= winename %><input type="hidden" value="<%= winename %>" name="Winename"></td>
+                        <td><%= agentRegion %><input type="hidden" value="<%= agentRegion %>" name="Seller"></td>
+                        <td><%= price %>$<input type="hidden" value="<%= price %>" name="Price"></td>
+                        <td><input type="number" name="Quantity" value="1" min="1" max="<%= quantity %>"></td>
+                        <td><input type="submit" value="Add to basket"> </td>
+                        
                     </tr>
-                    
+                    </form>
                 </table>
                       
           

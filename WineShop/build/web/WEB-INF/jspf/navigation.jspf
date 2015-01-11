@@ -13,7 +13,7 @@
 
         <div id="userIDbox">
             <p>Your user ID is: </p>
-            <p id="userIDtext"></p>
+            <p id="userIDtexta"><%= request.getSession().getId() %></p>
         </div>
 
         <div id="clearUserID" class="button">

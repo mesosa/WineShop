@@ -37,8 +37,8 @@ public interface WineWS {
      * @param sugar
      * @return
      *     returns org.me.wine.SetOfWines
-     * @throws Exception_Exception
      * @throws PrologException_Exception
+     * @throws Exception_Exception
      */
     @WebMethod
     @WebResult(targetNamespace = "")

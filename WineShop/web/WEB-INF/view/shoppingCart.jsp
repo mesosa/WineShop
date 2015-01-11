@@ -32,14 +32,21 @@
                     </tr>
                 </thead>
                 <tbody>
+
+  <tr>
+      <td><%= request.getSession().getAttribute("Winename") %></td>
+                        <td><%= request.getSession().getAttribute("Seller") %></td>
+                        <td><%= request.getSession().getAttribute("Quantity") %></td>
+                        <td><%= request.getSession().getAttribute("Price") %>$</td>
+                        
+                    </tr>
+
                     
-
-
                 </tbody>
             </table>
                 <div class="form-group align-right well">
                 <label>Total:</label>
-                <span class="price">$0</span>
+                <span class="price"><%= Integer.parseInt (request.getSession().getAttribute("Price").toString()) * Integer.parseInt( request.getSession().getAttribute("Quantity").toString()) %>$</span>
             </div>
                   </div>
                                     </div>
