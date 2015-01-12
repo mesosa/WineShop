@@ -18,11 +18,23 @@
              <%@ include file="/WEB-INF/jspf/searchbox.jspf" %>
              
              
-              <div id="cart">
+              
+                
+                <% 
+                    if (request.getSession().getAttribute("Winename") == null) {
+                        %>
+                        Your shopping cart is empty!
+                    <%
+                    // Not created yet. Now do so yourself.
+                    
+                } else {
+                        %>
+                    
+                        <div id="cart">
                                        <div class="col-md-12"> 
 
-                <h2>Shopping cart</h2>
-                <table class="table table-bordered">
+                        <h2>Shopping cart</h2>
+                        <table class="table table-bordered">
                 <thead class="table-header">
                     <tr>
                         <td>Wine name</td>
@@ -51,6 +63,11 @@
                   </div>
                                     </div>
 
-        </div> <!-- ends main -->
+        
+                        <%
+                }
+                %>
+                
+        </div> <!-- ends main -->        
     </body>
 </html>

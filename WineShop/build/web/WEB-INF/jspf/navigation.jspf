@@ -11,14 +11,14 @@
 
     <div id="userID">
 
-        <div id="userIDbox">
+        <!--div id="userIDbox">
             <p>Your user ID is: </p>
             <p id="userIDtexta"><%= request.getSession().getId() %></p>
         </div>
 
         <div id="clearUserID" class="button">
             <button id="reBut">Reset User ID</button>
-        </div>
+        </div-->
 
     </div> <!-- end userIDbox -->
 
