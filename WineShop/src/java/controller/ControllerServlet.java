@@ -12,7 +12,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
@@ -127,10 +129,9 @@ public class ControllerServlet extends HttpServlet {
             
             
             request.setAttribute("setofwines", results);
-                        
         } else if (userPath.equals("/shoppingCart")){
-        
-        } else if (userPath.equals("/priceResults")){
+            System.out.println("cart");
+        } /* */else if (userPath.equals("/priceResults")){
             String winename = request.getParameter("wineName");
             System.out.println(winename);
             
@@ -209,15 +210,30 @@ public class ControllerServlet extends HttpServlet {
             
             System.out.print("hejhej");
             HttpSession session = request.getSession(true);
+            
             String s = request.getParameter("Winename");
             String q = request.getParameter("Quantity");
             
+            if (session.getAttribute("cart")==null){
+                session.setAttribute("cart", new HashMap<String, ArrayList<String>>());
+            }
+            HashMap<String, ArrayList<String>> cart = (HashMap<String, ArrayList<String>>) session.getAttribute("cart");
+            
+            ArrayList<String> addToCart = new ArrayList<String>();
+            addToCart.add(request.getParameter("Price").toString());
+            addToCart.add(q==""?"0":q);
+            addToCart.add(request.getParameter("Seller").toString());
+                    
+            cart.put(s, addToCart);
+            session.setAttribute("cart", cart);
+            
+            /*
             session.setAttribute("Winename",s);
             session.setAttribute("Seller", request.getParameter("Seller").toString());
             session.setAttribute("Quantity", q==""?"0":q);
             session.setAttribute("Price", request.getParameter("Price").toString());
-           
-
+            */
+            
             response.setHeader("Location", "/shoppingCart");
             
         }
@@ -245,6 +261,14 @@ public class ControllerServlet extends HttpServlet {
 
         String userPath = request.getServletPath();
         HttpSession session = request.getSession();
+        System.out.println("post");
+        System.out.println(userPath);
+        if (userPath.equals("/shoppingCart")){
+            System.out.println("buy ");
+            //session.setAttribute("cart", new HashMap<String, ArrayList<String>>());
+            request.getSession(false).removeAttribute("cart");
+        
+        } 
         
         // use RequestDispatcher to forward request internally
         String url = "/WEB-INF/view" + userPath + ".jsp";

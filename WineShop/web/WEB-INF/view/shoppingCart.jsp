@@ -4,6 +4,8 @@
     Author     : miklasnjor
 --%>
 
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@ include file="/WEB-INF/jspf/header.jspf" %>
@@ -21,7 +23,8 @@
               
                 
                 <% 
-                    if (request.getSession().getAttribute("Winename") == null) {
+                    
+                    if (session.getAttribute("cart")==null) {
                         %>
                         Your shopping cart is empty!
                     <%
@@ -44,22 +47,45 @@
                     </tr>
                 </thead>
                 <tbody>
-
-  <tr>
-      <td><%= request.getSession().getAttribute("Winename") %></td>
+                    <% 
+                        HashMap<String, ArrayList<String>> cart = (HashMap<String, ArrayList<String>>) session.getAttribute("cart");
+                        
+                        Integer priceTog = 0;
+                        for (String name : cart.keySet()) {
+                            ArrayList<String> value = cart.get(name);
+                            priceTog = priceTog + Integer.parseInt(value.get(0))*Integer.parseInt(value.get(1));
+                            %>
+                            <tr>
+                                <td><%= name %></td>
+                                <td><%= value.get(2) %></td>
+                                <td><%= value.get(1) %></td>
+                                <td><%= value.get(0) %>$</td>
+                            </tr>
+                            <%
+                        }
+                        
+                    %>
+                    <!--
+                    <tr>
+                        <td><%= request.getSession().getAttribute("Winename") %></td>
                         <td><%= request.getSession().getAttribute("Seller") %></td>
                         <td><%= request.getSession().getAttribute("Quantity") %></td>
                         <td><%= request.getSession().getAttribute("Price") %>$</td>
                         
                     </tr>
 
-                    
+                    -->
                 </tbody>
             </table>
+                        
                 <div class="form-group align-right well">
                 <label>Total:</label>
-                <span class="price"><%= Integer.parseInt (request.getSession().getAttribute("Price").toString()) * Integer.parseInt( request.getSession().getAttribute("Quantity").toString()) %>$</span>
-            </div>
+                <span class="price"> <%= priceTog %>$</span>
+                <form action="shoppingCart" method="post">
+                    <input type="submit" name="buyButton" id="buyButton" value="Buy!">
+                </form>
+            
+                        </div>
                   </div>
                                     </div>
 
