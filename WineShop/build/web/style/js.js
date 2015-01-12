@@ -108,32 +108,7 @@ function makeSelectList(arrayName,elementID) {
 
 
 
-function getUserID() {
-    // setting user ID using javascript to populate the hidden value (theUserID) in the form and in "p userIDtext" in the navigation
-    // some of this might have to go... after we connect the pieces.
-    var date = new Date(); 
-    var userID = date.getTime();
-    var theID = document.getElementById("theUserID").value;
 
-    if (theID == "") {
-            document.getElementById("userIDtext").innerHTML = userID;
-            document.getElementById("theUserID").value = userID;
-    } else {
-            document.getElementById("userIDtext").innerHTML = theID;
-            document.getElementById("theUserID").value = theID;
-    }
-}
-
-function setUserID() {
-    // resetting of the userID - if we need to make a new user.
-    // getting form hidden value: http://www.mkyong.com/javascript/how-to-get-hidden-field-value-in-javascript/
-
-    var date = new Date();
-    var userID = date.getTime();
-
-    document.getElementById("userIDtext").innerHTML = userID;
-    document.getElementById("theUserID").value = userID;  
-}
 
 
 
@@ -341,12 +316,10 @@ function testalert() {
 
 // populate the select lists
 window.addEventListener("load", populateSelectLists);
-window.addEventListener("load", getUserID);
 
 //window.addEventListener("load", testalert);
 window.addEventListener("load", function() {
         var buttons = document.getElementById("reBut");
-        buttons.addEventListener("click", setUserID);
         var countBut = document.getElementById("wineCountries");
         countBut.addEventListener("change", changeRegionDropdown);
         var regiBut = document.getElementById("wineRegions");
@@ -355,7 +328,6 @@ window.addEventListener("load", function() {
         winBut.addEventListener("change", changeWineryCountryRegionDropdown);
     }    
 );
-
 
 
 
